@@ -1,7 +1,8 @@
 def bubble_sort(array)
-  sorted = false
+  is_sorted = false
 
-  while !sorted do
+  # As long as array isn't fully sorted, runs the bubble sort loop.
+  while !is_sorted do
     i = 0
     until i >= array.length - 1 do
       if array[i] > array[i + 1]
@@ -10,15 +11,13 @@ def bubble_sort(array)
       else
         i = i + 1
       end
-      p array
     end
-    sorted = check_if_sorted(array)
-    p sorted
+    is_sorted = check_if_sorted(array)
   end
-  
   return array
 end
 
+# Checks if each item in the array is in sequence with the next one (or, is the final element in the array.)
 def check_if_sorted(array)
-  return array.each_with_index.all?{|num, index| (index == array.length - 1) || (num < array[index + 1] || num == array[index + 1])}
+  return array.each_with_index.all?{|num, index| (index == array.length - 1) || (num <= array[index + 1])}
 end
