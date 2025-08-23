@@ -7,10 +7,8 @@ def bubble_sort(array)
     until i >= array.length - 1 do
       if array[i] > array[i + 1]
         array[i], array[i + 1] = array[i + 1], array[i]
-        i = i + 1
-      else
-        i = i + 1
       end
+        i = i + 1
     end
     is_sorted = check_if_sorted(array)
   end
